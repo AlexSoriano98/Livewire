@@ -21,6 +21,10 @@ class CreatePost extends Component
             'title' => $this->title,
             'content' => $this->content
         ]);
-        $this->open = false;
+        //creacion de evento
+
+        $this->reset(['open','title', 'content']);
+        $this->emitTp('show-posts','render');
+        $this->emit('alert','El post se creó sastifactoriamente');
     }
 }
