@@ -12,13 +12,10 @@ class CreatePost extends Component
     public $title, $content;
 
     protected $rules = [
-        'title' => 'required|max:10',
-        'content' => 'required|max:100'
+        'title' => 'required',
+        'content' => 'required'
     ];
  
-    public function updated($propertyName){
-        $this->validateOnly($propertyName);
-    }
     
     public function render()
     {
@@ -36,7 +33,7 @@ class CreatePost extends Component
         //creacion de evento
 
         $this->reset(['open','title', 'content']);
-        $this->emitTp('show-posts','render');
+        $this->emitTo('show-posts','render');
         $this->emit('alert','El post se creó sastifactoriamente');
     }
 }
