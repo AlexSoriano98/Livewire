@@ -7,12 +7,14 @@
         <x-slot name="title">Crear nuevo post</x-slot>
         <x-slot name="content">
             <div class="mb-4">
-                <x-jet-label value="Titulo del post"/>
-                <x-jet-input class="w-full" type="text" wire:model.defer="title"/>
+                <x-jet-label value="Titulo del post" />
+                <x-jet-input class="w-full" type="text" wire:model="title" />
+                <x-jet-input-error class="mt-2" for="title" />
             </div>
             <div class="mb-4">
-                <x-jet-label value="Contenido del post"/>
-                <textarea wire:model.defer="content" row="6" class="form-control w-full"></textarea>    
+                <x-jet-label value="Contenido del post" />
+                <textarea wire:model.defer="content" row="6" class="form-control w-full"></textarea>
+                <x-jet-input-error class="mt-2" for="content" />
             </div>
         </x-slot>
         <x-slot name="footer">
